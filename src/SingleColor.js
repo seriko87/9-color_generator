@@ -24,7 +24,7 @@ const SingleColor = ({ item }) => {
       setText("");
     }, 3000);
     return () => clearInterval(value);
-  });
+  }, [text]);
 
   return (
     <div

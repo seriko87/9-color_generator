@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SingleColor from "./SingleColor";
 import Values from "values.js";
 
 function App() {
   const [hex, setHex] = useState("#f15025");
-  const [arr, setArr] = useState([]);
+  const [arr, setArr] = useState(new Values("#f15025").all(10));
   const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
@@ -32,11 +32,6 @@ function App() {
     setError(false);
     setHex("#" + randomColor);
   };
-  useEffect(() => {
-    const color = new Values(hex).all(10);
-    setArr(color);
-    setError(false);
-  }, []);
 
   return (
     <>
